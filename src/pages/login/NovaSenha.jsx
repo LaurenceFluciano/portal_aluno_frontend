@@ -1,3 +1,6 @@
+
+import '../../styles/auth.css';
+
 export function NovaSenha() {
   return (
     <div className="container">

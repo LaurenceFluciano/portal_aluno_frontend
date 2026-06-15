@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import InputField from '../../components/InputField';
 
+import '../../styles/auth.css';
+
 export function Login() {
 
   const [email, setEmail] = useState('');
@@ -30,8 +32,6 @@ export function Login() {
     
   }
   return (
-
-    
     <div className="container">
       <aside>
         <p>

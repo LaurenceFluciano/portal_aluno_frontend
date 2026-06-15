@@ -1,3 +1,5 @@
+import '../../styles/auth.css';
+
 export function RecuperarSenha() {
 
   return (

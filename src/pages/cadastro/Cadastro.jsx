@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import CadastroPassoUm from "./CadastroPassoUm";
 import CadastroPassoDois from "./CadastroPassoDois";
 
+import '../../styles/auth.css';
 
 export function Cadastro() {
     const [searchParams] = useSearchParams();

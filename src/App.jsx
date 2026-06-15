@@ -3,9 +3,10 @@ import { Routes, Route, Navigate} from 'react-router-dom'
 import Login from './pages/login/Login';
 import NovaSenha from './pages/login/NovaSenha';
 import RecuperarSenha from './pages/login/RecuperarSenha';
-import './index.css';
-import './mobile.css';
+import './styles/index.css';
+import './styles/mobile.css';
 import { Cadastro } from './pages/cadastro/Cadastro';
+import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/recuperar-senha" element={<RecuperarSenha />} />
         <Route path="/nova-senha" element={<NovaSenha />} />
-        <Route path="/dashboard" element={<></>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
         <Route path="/perfil" element={<></>} />
         <Route path="/disciplinas" element={<></>} />
         <Route path="/tutoria" element={<></>} />
