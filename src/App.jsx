@@ -1,16 +1,18 @@
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route, Navigate} from 'react-router-dom'
 
-import Login from './pages/Login';
-import NovaSenha from './pages/NovaSenha';
-import RecuperarSenha from './pages/RecuperarSenha';
+import Login from './pages/login/Login';
+import NovaSenha from './pages/login/NovaSenha';
+import RecuperarSenha from './pages/login/RecuperarSenha';
 import './index.css';
 import './mobile.css';
-import { Cadastro } from './pages/Cadastro';
+import { Cadastro } from './pages/cadastro/Cadastro';
 
 function App() {
 
   return ( 
       <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/recuperar-senha" element={<RecuperarSenha />} />
