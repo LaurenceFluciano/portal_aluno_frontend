@@ -1,0 +1,10 @@
+
+.dashboard{
+    background-color: #ededed;
+    padding: 1rem 0px;
+}
+
+.dashboard__container{
+    width: 960px;
+    margin: 0 auto;
+}
