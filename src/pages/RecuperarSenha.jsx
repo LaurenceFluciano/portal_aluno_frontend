@@ -1,4 +1,4 @@
-function RecuperarSenha() {
+export function RecuperarSenha() {
   return (
     <div className="container">
       <aside>

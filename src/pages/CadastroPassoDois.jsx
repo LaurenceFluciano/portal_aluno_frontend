@@ -1,4 +1,4 @@
-function CadastroDados() {
+function CadastroPassoDois() {
   return (
     <div className="container">
       <aside>
@@ -35,4 +35,4 @@ function CadastroDados() {
   );
 }
 
-export default CadastroDados;
+export default CadastroPassoDois;

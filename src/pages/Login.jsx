@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import InputField from '../components/InputField';
 
-function Login() {
+export function Login() {
 
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'; 
 
-function Cadastro() {
+function CadastroPassoUm() {
   return (
     <div className="container">
       <aside>
@@ -20,11 +20,11 @@ function Cadastro() {
           <input id="cpf" name="cpf" type="text" placeholder="000.000.000-00" />
 
          
-          <Link to="/cadastro-dados">Prosseguir</Link>
+          <Link to="/cadastro?passo=2">Prosseguir</Link>
         </div>
       </main>
     </div>
   );
 }
 
-export default Cadastro;
+export default CadastroPassoUm;

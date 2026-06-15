@@ -1,4 +1,4 @@
-function NovaSenha() {
+export function NovaSenha() {
   return (
     <div className="container">
       <aside>
