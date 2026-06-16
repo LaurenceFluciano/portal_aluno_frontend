@@ -1,6 +1,6 @@
-export function CardHeader({children}) {
+export function CardHeader({children, layout="row"}) {
     return (
-        <div className="card__header">
+        <div className={`card__header layout--${layout}`}>
             {children}
         </div>
     )
