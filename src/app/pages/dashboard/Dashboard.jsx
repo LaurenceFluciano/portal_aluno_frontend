@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card } from "../../../components/Card/Card";
-import { CardContent } from "../../../components/Card/CardContent";
-import { CardHeader } from "../../../components/Card/CardHeader";
-import { Group } from "../../../components/Group";
+import { CourseCard } from "../../../components/Card/CourseCard";
 
 function Dashboard() {
     const [dataHoje, setDataHoje] = useState(new Date())
@@ -35,40 +32,14 @@ function Dashboard() {
                 </p>
             </div>
 
-            <Card>
-                <CardHeader>
-                    <span className="card__badge">Em progresso</span>
-                    <h3 className="card__title">
-                        Front-end
-                    </h3>
-                </CardHeader>
-                <CardContent layout='col'>
-                    <Group>
-                        <p className="card__description">Aula 2 - Conceitos de desenvolvimento Front-end e Git + Gtihub</p>
-                        <div className="card__progress">
-                            <div style={{width: "65%"}}>65%</div>
-                        </div>
-                    </Group>
-                    
+            <CourseCard />
 
-                    <button className="card__button">Retomar estudo</button>
-                </CardContent>
-            </Card>
-
-            <div className="card">
-                <div className="card__body">
-                    <span className="card__badge">Em progresso</span>
-                    <h3 className="card__title">
-                        UX Design
-                    </h3>
-                    <p className="card__description">Aula 3 - Usabilidade</p>
-                    <div className="card__progress">
-                        <div style={{width: "34%"}}>34%</div>
-                    </div>
-                </div>
-            
-                <button className="card__button">Retomar estudo</button>
-            </div>
+            <CourseCard 
+                status="Em progresso"
+                subject="UX Design"
+                description="Aula 3 - Usabilidade"
+                progress={34}
+            />
 
             <div className="card__group">
                 <div className="card">
