@@ -15,8 +15,6 @@ export function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Tentando logar com:", email, senha); // só de teste por enquanto
-
 
     if (!email || !senha) {
       setErro('Por favor, preencha todos os campos obrigatórios.');
@@ -24,6 +22,13 @@ export function Login() {
     }
     if (!email.includes('@')) {
       setErro('Por favor, insira um e-mail válido.');
+      return; 
+    }
+
+    const usuariosCadastrados = JSON.parse(localStorage.getItem('cadastroData')) || [];
+
+    if (usuariosCadastrados.email !== email || usuariosCadastrados.senha !== senha) {
+      setErro('E-mail ou senha incorretos. Por favor, tente novamente.');
       return; 
     }
 

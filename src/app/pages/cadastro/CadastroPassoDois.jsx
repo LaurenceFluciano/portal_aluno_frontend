@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputField from '../../../components/InputField';
+import useCadastro from './Cadastro';
 
 function CadastroPassoDois() {
  
-  const [nome, setNome] = useState('');
-  const [telefone, setTelefone] = useState('');
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-
+ const { cadData, handleCadChange } = useCadastro();
+ 
   const [erro, setErro] = useState('');
 
   const navigate = useNavigate();
@@ -16,23 +14,24 @@ function CadastroPassoDois() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!nome || !telefone || !email || !senha) {
+    if (!cadData.nome || !cadData.telefone || !cadData.email || !cadData.senha) {
       setErro('Por favor, preencha todos os campos obrigatórios.');
       return;
     }
 
-    if (!email.includes('@')) {
+    if (!cadData.email.includes('@')) {
       setErro('Por favor, insira um e-mail válido.');
       return;
     }
 
-    if (senha.length < 6) {
+    if (cadData.senha.length < 6) {
       setErro('A sua senha deve ter pelo menos 6 caracteres.');
       return;
     }
 
+
     setErro('');
-    console.log("Usuário cadastrado com sucesso!", { nome, telefone, email });
+
     
     navigate('/'); 
 
@@ -65,8 +64,8 @@ function CadastroPassoDois() {
               name="nome"
               type="text"
               placeholder="Digite seu nome completo"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
+              value={cadData.nome}
+              onChange={(e) => handleCadChange({ nome: e.target.value })}
             />
 
             <InputField 
@@ -75,8 +74,8 @@ function CadastroPassoDois() {
               name="telefone"
               type="tel"
               placeholder="(99) 99999-9999"
-              value={telefone}
-              onChange={(e) => setTelefone(e.target.value)}
+              value={cadData.telefone}
+              onChange={(e) => handleCadChange({ telefone: e.target.value })}
             />
 
             <InputField 
@@ -85,8 +84,8 @@ function CadastroPassoDois() {
               name="email"
               type="email"
               placeholder="user@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={cadData.email}
+              onChange={(e) => handleCadChange({ email: e.target.value })}
             />
 
             <InputField 
@@ -95,8 +94,8 @@ function CadastroPassoDois() {
               name="senha"
               type="password"
               placeholder="Crie uma senha"
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
+              value={cadData.senha}
+              onChange={(e) => handleCadChange({ senha: e.target.value })}
             />
 
             <button type="submit">Cadastrar</button>

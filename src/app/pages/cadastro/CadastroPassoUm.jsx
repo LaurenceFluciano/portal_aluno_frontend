@@ -1,10 +1,10 @@
 import { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import InputField from '../../../components/InputField';
+import CadastroContext from './Cadastro';
 
 function CadastroPassoUm() {
-  
-  const [cpf, setCpf] = useState('');
+  const { cadData, handleCadChange } = CadastroContext();
   const [erro, setErro] = useState('');
 
   const navigate = useNavigate();
@@ -12,12 +12,12 @@ function CadastroPassoUm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!cpf) {
+    if (!cadData.cpf) {
       setErro('Por favor, preencha o seu CPF.');
       return;
     }
 
-    if (cpf.length < 11) {
+    if (cadDatacpf.length < 11) {
       setErro('Por favor, digite um CPF válido com pelo menos 11 números.');
       return;
     }
@@ -54,8 +54,8 @@ function CadastroPassoUm() {
               name="cpf"
               type="text"
               placeholder="000.000.000-00"
-              value={cpf}
-              onChange={(e) => setCpf(e.target.value)}
+              value={cadData.cpf}
+              onChange={(e) => handleCadChange({ cpf: e.target.value })}
             />
 
             <button type="submit">Prosseguir</button>
