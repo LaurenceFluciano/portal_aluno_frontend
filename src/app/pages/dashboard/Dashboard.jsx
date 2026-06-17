@@ -3,16 +3,30 @@ import { CourseCard } from "../../../components/CourseCard/CourseCard";
 import { StatCard } from "../../../components/StatCard/StatCard";
 
 function Dashboard() {
-    const [dataHoje, setDataHoje] = useState(new Date())
+    const dataHoje = new Date()
 
+    const [cursos, setCursos] = useState([])
+    const [error, setError] = useState(false)
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setDataHoje(new Date())
-        }, 60000)
+        async function loadData() {
+            try {
+                const response = await fetch("../../../mock/courses.json");
 
-        return () => clearInterval(interval)
-    }, [])
+                if (!response.ok) {
+                    setError(true);
+                    return;
+                }
+
+                const data = await response.json();
+                setCursos(data.response);
+            } catch (error) {
+                setError(true);
+            }
+        }
+
+        loadData();
+    }, []);
 
     return (
         <div className="dashboard__container">
@@ -33,19 +47,18 @@ function Dashboard() {
                 </p>
             </div>
 
-            <CourseCard
-                subject="Front-end"
-                status="Em progresso"
-                description="Aula 2 - Conceitos de desenvolvimento Front-end e Git + Github"
-                progress={65}
-            />
+            { error && <div>Erro ao carregar os dados </div>}
+            { cursos.length > 0 && cursos.map((value, index) => (
+                <CourseCard 
+                    key={index}
 
-            <CourseCard
-                status="Em progresso"
-                subject="UX Design"
-                description="Aula 3 - Usabilidade"
-                progress={34}
-            />
+                    subject={value.subject}
+                    status={value.status}
+                    description={value.description}
+                    progress={value.progress}
+                />
+            ))}
+         
 
             <div className="grid sd:col--2 md:col--3 gap--16">
                 <StatCard 
