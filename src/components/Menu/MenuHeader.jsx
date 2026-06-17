@@ -1,13 +1,14 @@
+import MenuLink from "./MenuLink";
 
 
-export default function Menu({ children }) {
+export default function MenuHeader({ children }) {
     return (
         <div className="menu">
             <div className="menu__body">
                 <h1 className="menu__title">Academia <span>Portal do aluno</span></h1>
-                <nav className="menu__links">
+                <MenuLink variant={'header'}>
                     { children }
-                </nav>
+                </MenuLink>
             </div>
         </div>
     )
