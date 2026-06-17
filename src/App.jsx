@@ -10,6 +10,7 @@ import Dashboard from './app/pages/dashboard/Dashboard';
 import DashboardLayout from './app/layout/DashboardLayout';
 import Discipline from './app/pages/dashboard/Discipline';
 import Perfil from './app/pages/dashboard/Perfil';
+import Tutoria from './app/pages/dashboard/Tutoria';
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/perfil/dados-pessoais" element={<Perfil />} />
           <Route path="/disciplina" element={<Discipline/>} />
-          <Route path="/tutoria" element={<></>} />
+          <Route path="/tutoria" element={<Tutoria />} />
         </Route>
       </Routes>
   )
