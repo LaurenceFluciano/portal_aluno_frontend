@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { CourseCard } from "../../../components/Card/CourseCard";
+import { CourseCard } from "../../../components/CourseCard/CourseCard";
+import { StatCard } from "../../../components/StatCard/StatCard";
 
 function Dashboard() {
     const [dataHoje, setDataHoje] = useState(new Date())
@@ -20,7 +21,7 @@ function Dashboard() {
                 <h2>
                     Boa noite, João
                 </h2>
-                <p>
+                <p className="ml--4 mb--4">
                     {String(dataHoje.getDate()).padStart(2,'0')}/
                     {String(dataHoje.getMonth()).padStart(2,'0')}/
                     {dataHoje.getFullYear()}
@@ -32,45 +33,38 @@ function Dashboard() {
                 </p>
             </div>
 
-            <CourseCard />
+            <CourseCard
+                subject="Front-end"
+                status="Em progresso"
+                description="Aula 2 - Conceitos de desenvolvimento Front-end e Git + Github"
+                progress={65}
+            />
 
-            <CourseCard g
+            <CourseCard
                 status="Em progresso"
                 subject="UX Design"
                 description="Aula 3 - Usabilidade"
                 progress={34}
             />
 
-            <div className="card__group">
-                <div className="card">
-                    <div className="card__body">
-                        <span className="card__badge">Tempo de estudo</span>
-                        <h3 id="tempo" className="card__title">
-                            12h 45m
-                        </h3>
-                        <p className="card__description">Esta semana</p>
-                    </div>
-                </div>
+            <div className="grid sd:col--2 md:col--3 gap--16">
+                <StatCard 
+                    label="Tempo de estudo"
+                    value="12h 45m"
+                    description="Esta semana"
+                />
 
-                <div className="card">
-                    <div className="card__body">
-                        <span className="card__badge">Tarefas pendentes</span>
-                        <h3 id="tarefas" className="card__title">
-                            2
-                        </h3>
-                        <p id="vencimento" className="card__description">Próximo vencimento em 2 dias</p>
-                    </div>
-                </div>
+                <StatCard 
+                    label="Tarefas pendentes"
+                    value="2"
+                    description="Próximo vencimento em 2 dias"
+                />
 
-                <div className="card">
-                    <div className="card__body">
-                        <span className="card__badge">Discussão com a IA</span>
-                        <h3 id="chats" className="card__title">
-                            8
-                        </h3>
-                        <p className="card__description">Tópicos ativos</p>
-                    </div>
-                </div>
+                <StatCard 
+                    label="Discussão com a IA"
+                    value="8"
+                    description="Tópicos ativos"
+                />
             </div>
         </div>
     )
