@@ -34,7 +34,7 @@ function Dashboard() {
 
             <CourseCard />
 
-            <CourseCard 
+            <CourseCard g
                 status="Em progresso"
                 subject="UX Design"
                 description="Aula 3 - Usabilidade"
