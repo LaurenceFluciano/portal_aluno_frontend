@@ -8,6 +8,7 @@ import './styles/mobile.css';
 import { Cadastro } from './app/pages/cadastro/Cadastro';
 import Dashboard from './app/pages/dashboard/Dashboard';
 import DashboardLayout from './app/layout/DashboardLayout';
+import Discipline from './app/pages/dashboard/Discipline';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
         <Route element={<DashboardLayout/>}>
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/perfil" element={<></>} />
-          <Route path="/disciplinas" element={<></>} />
+          <Route path="/disciplina" element={<Discipline/>} />
           <Route path="/tutoria" element={<></>} />
         </Route>
       </Routes>
