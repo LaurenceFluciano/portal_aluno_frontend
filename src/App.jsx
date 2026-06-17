@@ -9,6 +9,7 @@ import { Cadastro } from './app/pages/cadastro/Cadastro';
 import Dashboard from './app/pages/dashboard/Dashboard';
 import DashboardLayout from './app/layout/DashboardLayout';
 import Discipline from './app/pages/dashboard/Discipline';
+import Perfil from './app/pages/dashboard/Perfil';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
 
         <Route element={<DashboardLayout/>}>
           <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path="/perfil" element={<></>} />
+          <Route path="/perfil/dados-pessoais" element={<Perfil />} />
           <Route path="/disciplina" element={<Discipline/>} />
           <Route path="/tutoria" element={<></>} />
         </Route>
