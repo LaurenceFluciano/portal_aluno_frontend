@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputField from '../../../components/InputField';
-import useCadastro from './Cadastro';
+import { UseCadastro } from './Cadastro';
 
 function CadastroPassoDois() {
- 
- const { cadData, handleCadChange } = useCadastro();
+
+  const { cadData, handleCadChange, handleEnvioCad } = UseCadastro();
  
   const [erro, setErro] = useState('');
 
@@ -31,6 +31,8 @@ function CadastroPassoDois() {
 
 
     setErro('');
+
+    handleEnvioCad();
 
     
     navigate('/'); 

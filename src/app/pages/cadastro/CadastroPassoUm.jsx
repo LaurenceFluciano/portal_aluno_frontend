@@ -1,10 +1,10 @@
 import { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import InputField from '../../../components/InputField';
-import CadastroContext from './Cadastro';
+import { UseCadastro } from './Cadastro';
 
 function CadastroPassoUm() {
-  const { cadData, handleCadChange } = CadastroContext();
+  const { cadData, handleCadChange } = UseCadastro();
   const [erro, setErro] = useState('');
 
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ function CadastroPassoUm() {
       return;
     }
 
-    if (cadDatacpf.length < 11) {
+    if (cadData.cpf.length < 11) {
       setErro('Por favor, digite um CPF válido com pelo menos 11 números.');
       return;
     }

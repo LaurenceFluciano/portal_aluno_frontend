@@ -46,4 +46,9 @@ export function Cadastro() {
 }
 
 export function UseCadastro() {
-  return useContext(CadastroContext);}
+    const context = useContext(CadastroContext);
+    return context;
+}
+
+
+export default Cadastro;

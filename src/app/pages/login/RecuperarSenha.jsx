@@ -1,12 +1,14 @@
-import '../../../styles/auth.css';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import InputField from '../../../components/InputField';
+import InputField from "../../../components/InputField";
 import emailjs from '@emailjs/browser';
+
 
 function RecuperarSenha() {
   const [email, setEmail] = useState('');
   const [erro, setErro] = useState('');
+  const [sucesso, setSucesso] = useState(false);
 
   const navigate = useNavigate();
 
@@ -41,12 +43,13 @@ function RecuperarSenha() {
 
     emailjs.send('service_rmmv29h', 'template_9i3r3xg', templateParams, 'K7om5hJg9s2Hnajqk')
       .then(() => {
+        setSucesso(true);
       
         setTimeout(() => {
           navigate('/nova-senha'); 
         }, 1000);
       })
-      .catch(() => {
+      .catch((err) => {
         setErro('Erro ao enviar o e-mail.');
       });
   };
