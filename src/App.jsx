@@ -9,10 +9,13 @@ import { Cadastro } from './app/pages/cadastro/Cadastro';
 import Dashboard from './app/pages/dashboard/Dashboard';
 import DashboardLayout from './app/layout/DashboardLayout';
 import Discipline from './app/pages/dashboard/Discipline';
+import { UserProvider } from './context/UserContext.jsx';
 
 function App() {
 
   return ( 
+
+    <UserProvider>
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
 
@@ -29,6 +32,7 @@ function App() {
           <Route path="/tutoria" element={<></>} />
         </Route>
       </Routes>
+      </UserProvider>
   )
 }
 
