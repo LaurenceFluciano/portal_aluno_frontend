@@ -1,4 +1,4 @@
-
+import "../../styles/menu.css"
 
 export default function MenuLink({ children, variant }) {
     return (

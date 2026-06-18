@@ -1,7 +1,7 @@
-import { Group } from "../Group";
-import { Card } from "../Card/Card";
-import { CardContent } from "../Card/CardContent";
-import { CardHeader } from "../Card/CardHeader";
+import { Group } from "../layout/Group";
+import { Card } from "./Card";
+import { CardContent } from "./CardContent";
+import { CardHeader } from "./CardHeader";
 import CourseProgressBar from "../ProgressBar";
 
 
@@ -13,15 +13,15 @@ export function CourseCard({
 }) {
 
     return (
-        <Card layout="col">
+        <Card direction="col">
             <Group>
-                <CardHeader layout="row">
+                <CardHeader direction="row">
                     <span className="card__badge">{status}</span>
                     <h3 className="card__title mt--4">
                         {subject}
                     </h3>
                 </CardHeader>
-                <CardContent layout="row">
+                <CardContent direction="row">
                     <p className="card__description">{description}</p>
 
                     <CourseProgressBar progress={progress} />

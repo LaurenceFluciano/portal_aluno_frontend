@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { DisciplineCard } from "../../../components/DisciplineCard/DisciplineCard";
+import { DisciplineCard } from "../../../components/card/DisciplineCard";
 
 export default function Discipline() {
     const [disciplinas, setDisciplinas] = useState([])
-    const [erro, setErro] = useState(false)
+    const [erro, setErro] = useState(null)
 
 
     useEffect(() => {
@@ -12,14 +12,13 @@ export default function Discipline() {
                 const response = await fetch("../../../mock/discipline.json");
 
                 if (!response.ok) {
-                    setError(true);
-                    return;
+                    throw new Error("Dados não encontrados.")
                 }
 
                 const data = await response.json();
                 setDisciplinas(data.response);
             } catch (error) {
-                setError(true);
+                setErro(error);
             }
         }
 

@@ -1,0 +1,49 @@
+/*
+* MENU
+*/
+
+
+.menu{
+    background-color: #FFFFFF;
+}
+
+.menu__body{
+    display: flex;
+    align-items: center;
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px 0;
+
+}
+
+.menu__title{
+    margin: 0;
+    font-size: 18px;
+    color: #0F5830;
+}
+
+.menu__title span{
+    display: block;
+    font-size: 12px;
+    color: #CCCCCC;
+}
+
+.menu__links{
+    margin-left: auto;
+}
+
+.menu__item{
+    display: inline-block;
+    padding: 0 8px;
+    color: #999999;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu__item:hover{
+    text-decoration: underline;
+}
+
+.menu__item--active{
+    color: #0F5830;
+}

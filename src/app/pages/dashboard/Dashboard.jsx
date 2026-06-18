@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { CourseCard } from "../../../components/CourseCard/CourseCard";
-import { StatCard } from "../../../components/StatCard/StatCard";
+import { CourseCard } from "../../../components/card/CourseCard";
+import { StatCard } from "../../../components/card/StatCard";
+import Grid from "../../../components/layout/Grid";
 
 function Dashboard() {
     const dataHoje = new Date()
 
     const [cursos, setCursos] = useState([])
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         async function loadData() {
@@ -14,14 +15,13 @@ function Dashboard() {
                 const response = await fetch("../../../mock/courses.json");
 
                 if (!response.ok) {
-                    setError(true);
-                    return;
+                    throw new Error("Dados não encontrados.")
                 }
 
                 const data = await response.json();
                 setCursos(data.response);
-            } catch (error) {
-                setError(true);
+            } catch (err)  {
+                setError(err);
             }
         }
 
@@ -60,7 +60,14 @@ function Dashboard() {
             ))}
          
 
-            <div className="grid sd:col--2 md:col--3 gap--16">
+            <Grid 
+                cols={{
+                    default: 1,
+                    sm: 2,
+                    md: 3
+                }}
+                gap={"md"}
+            >
                 <StatCard 
                     label="Tempo de estudo"
                     value="12h 45m"
@@ -78,7 +85,7 @@ function Dashboard() {
                     value="8"
                     description="Tópicos ativos"
                 />
-            </div>
+            </Grid>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-
+import "../../styles/menu.css"
 
 export default function MenuItem({ children, to }) {
     return (

@@ -1,6 +1,6 @@
-import { Group } from "../../../components/Group";
-import MenuItem from "../../../components/Menu/MenuItem";
-import MenuLink from "../../../components/Menu/MenuLink";
+import { Group } from "../../../components/layout/Group";
+import MenuItem from "../../../components/menu/MenuItem";
+import MenuLink from "../../../components/menu/MenuLink";
 
 
 
@@ -16,6 +16,9 @@ export default function Perfil() {
         <div className="dashboard__container">
 
             <div className="perfil">
+                <div className="perfil__avatar">
+                    JS
+                </div>
                 <h1 className="perfil__name">Joao Silva</h1>
                 <span className="perfil__course">Engenharia de Software - 3 Ano</span>
             </div>

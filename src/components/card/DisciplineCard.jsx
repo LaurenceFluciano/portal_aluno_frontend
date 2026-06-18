@@ -1,7 +1,7 @@
-import { Group } from "../Group";
-import { Card } from "../Card/Card";
-import { CardContent } from "../Card/CardContent";
-import { CardHeader } from "../Card/CardHeader";
+import { Group } from "../layout/Group";
+import { Card } from "./Card";
+import { CardContent } from "./CardContent";
+import { CardHeader } from "./CardHeader";
 import CourseProgressBar from "../ProgressBar";
 
 
@@ -13,8 +13,8 @@ export function DisciplineCard({
 }) {
 
     return (
-        <Card layout="row">
-            <CardHeader layout="col">
+        <Card direction="row">
+            <CardHeader direction="col">
                 <Group>
                     <h3 className="card__title">{subject}</h3>
                     <span className="card__description">{professor}</span>

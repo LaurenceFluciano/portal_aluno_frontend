@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import MenuItem from "../../components/Menu/MenuItem";
+import MenuItem from "../../components/menu/MenuItem";
 
 import '../../styles/dashboard.css'
-import MenuHeader from "../../components/Menu/MenuHeader";
+import MenuHeader from "../../components/menu/MenuHeader";
 
 export default function DashboardLayout() {
     return (

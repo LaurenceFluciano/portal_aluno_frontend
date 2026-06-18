@@ -2,9 +2,29 @@
 .dashboard{
     background-color: #ededed;
     padding: 1rem 0px;
+    min-height: 100vh;
 }
 
 .dashboard__container{
-    width: 960px;
+    max-width: 960px;
     margin: 0 auto;
+}
+
+
+/*
+* WELCOME
+*/
+
+.welcome{
+    padding: 40px 0;
+}
+
+.welcome h2{ 
+    margin: 0;
+    font-size: 32px;
+    color: #0F5830;
+}
+
+.welcome p{
+    color: #999999;
 }

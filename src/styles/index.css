@@ -38,71 +38,15 @@ header{
 }
 
 /*
-* MENU
+* VARIAVEIS
 */
 
-
-.menu{
-    background-color: #FFFFFF;
-}
-
-.menu__body{
-    display: flex;
-    align-items: center;
-    width: 960px;
-    margin: 0 auto;
-    padding: 20px 0;
-
-}
-
-.menu__title{
-    margin: 0;
-    font-size: 18px;
-    color: #0F5830;
-}
-
-.menu__title span{
-    display: block;
-    font-size: 12px;
-    color: #CCCCCC;
-}
-
-.menu__links{
-    margin-left: auto;
-}
-
-.menu__item{
-    display: inline-block;
-    padding: 0 8px;
-    color: #999999;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.menu__item:hover{
-    text-decoration: underline;
-}
-
-.menu__item--active{
-    color: #0F5830;
-}
-
-/*
-* WELCOME
-*/
-
-.welcome{
-    padding: 40px 0;
-}
-
-.welcome h2{ 
-    margin: 0;
-    font-size: 32px;
-    color: #0F5830;
-}
-
-.welcome p{
-    color: #999999;
+:root {
+    --xs: var(--xs);
+    --sm: 8px;
+    --md: 16px;
+    --lg: 24px;
+    --xl: 32px;
 }
 
 /*
@@ -113,58 +57,105 @@ header{
     display: flex;
 }
 
-.layout--row {
+.group--row {
     flex-direction: column;
 }
 
-.layout--col {
+.group--col {
     flex-direction: row;
 }
 
-.align--middle-center {
+.group.align--middle-center {
     align-items: center;
     justify-content: center;
 }
 
-.layout--col.align--middle-start {
+.group--col.align--middle-start {
     align-items: center;
     justify-content: start;
 }
 
-.layout--row.align--middle-start {
+.group--row.align--middle-start {
     align-items: start;
     justify-content: center;
 }
 
-/* grid */
+/* GAP */
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-}
+.gap--none { gap: 0;    }
+.gap--xs   { gap: var(--xs);  }
+.gap--sm   { gap: var(--sm);  }
+.gap--md   { gap: var(--md); }
+.gap--lg   { gap: var(--lg); }
+.gap--xl   { gap: var(--xl); }
 
-.grid.gap--16 {
-    gap: 16px;
-}
+/* MARGIN */
 
-@media (min-width: 600px) {
-    .sd\:col--2 { grid-template-columns: repeat(2, 1fr); }
-}
+.m--none { margin: 0; }
+.m--xs   { margin: var(--xs); }
+.m--sm   { margin: var(--sm); }
+.m--md   { margin: var(--md); }
+.m--lg   { margin: var(--lg); }
+.m--xl   { margin: var(--xl); }
 
-@media (min-width: 960px) {
-    .md\:col--3 { grid-template-columns: repeat(3, 1fr); }
-}
 
-/* margin */
+/* MARGIN X */
 
-.ml--auto {
-    margin-left: auto;
-}
+.mx--none { margin-left: 0; margin-right: 0; }
+.mx--xs   { margin-left: var(--xs); margin-right: var(--xs); }
+.mx--sm   { margin-left: var(--sm); margin-right: var(--sm); }
+.mx--md   { margin-left: var(--md); margin-right: var(--md); }
+.mx--lg   { margin-left: var(--lg); margin-right: var(--lg); }
+.mx--xl   { margin-left: var(--xl); margin-right: var(--xl); }
 
-.mt--4 {
-    margin-top: 4px;
-}
 
-.mb--4 {
-    margin-bottom: 4px;
-}
+/* MARGIN Y */
+
+.my--none { margin-top: 0; margin-bottom: 0; }
+.my--xs   { margin-top: var(--xs); margin-bottom: var(--xs); }
+.my--sm   { margin-top: var(--sm); margin-bottom: var(--sm); }
+.my--md   { margin-top: var(--md); margin-bottom: var(--md); }
+.my--lg   { margin-top: var(--lg); margin-bottom: var(--lg); }
+.my--xl   { margin-top: var(--xl); margin-bottom: var(--xl); }
+
+/* Auto */
+.mx--auto { margin-left: auto; margin-right: auto; }
+.my--auto { margin-top: auto; margin-bottom: auto; }
+.mt--auto { margin-top: auto; }
+.mb--auto { margin-bottom: auto; }
+.ml--auto { margin-left: auto; }
+.mr--auto { margin-right: auto; }
+
+/* Lados individuais */
+
+
+
+.mt--xs { margin-top: var(--xs); }
+.mb--xs { margin-bottom: var(--xs); }
+.ml--xs { margin-left: var(--xs); }
+.mr--xs { margin-right: var(--xs); }
+
+.mt--sm { margin-top: var(--sm); }
+.mb--sm { margin-bottom: var(--sm); }
+.ml--sm { margin-left: var(--sm); }
+.mr--sm { margin-right: var(--sm); }
+
+.mt--md { margin-top: var(--md); }
+.mb--md { margin-bottom: var(--md); }
+.ml--md { margin-left: var(--md); }
+.mr--md { margin-right: var(--md); }
+
+.mt--lg { margin-top: var(--lg); }
+.mb--lg { margin-bottom: var(--lg); }
+.ml--lg { margin-left: var(--lg); }
+.mr--lg { margin-right: var(--lg); }
+
+.mt--xl { margin-top: var(--xl); }
+.mb--xl { margin-bottom: var(--xl); }
+.ml--xl { margin-left: var(--xl); }
+.mr--xl { margin-right: var(--xl); }
+
+
+/*
+* PADDING
+*/
