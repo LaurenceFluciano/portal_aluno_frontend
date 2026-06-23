@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { CourseCard } from "@/components/dashboard/CourseCard";
-import { StatCard } from "@/components/dashboard/StatCard";
+import { CourseCard } from "./components/CourseCard";
+import { StatCard } from "./components/StatCard";
 import Grid from "@/components/layout/Grid";
 
 import './styles/card.css'

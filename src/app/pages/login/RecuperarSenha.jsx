@@ -1,9 +1,8 @@
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import InputField from "../../../components/InputField";
+import InputField from "@/components/ui/InputField";
 import emailjs from '@emailjs/browser';
-
 
 function RecuperarSenha() {
   const [email, setEmail] = useState('');

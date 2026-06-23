@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import InputField from '../../../components/InputField';
+import InputField from "@/components/ui/InputField";
 import { UseCadastro } from './Cadastro';
 
 function CadastroPassoDois() {

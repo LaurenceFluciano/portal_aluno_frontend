@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DisciplineCard } from "@/components/dashboard/DisciplineCard";
+import { DisciplineCard } from "./components/DisciplineCard";
 
 import './styles/card.css'
 
