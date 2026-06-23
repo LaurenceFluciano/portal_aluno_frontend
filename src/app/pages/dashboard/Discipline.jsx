@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DisciplineCard } from "../../../components/card/DisciplineCard";
+import { DisciplineCard } from "@/components/dashboard/DisciplineCard";
 
 export default function Discipline() {
     const [disciplinas, setDisciplinas] = useState([])

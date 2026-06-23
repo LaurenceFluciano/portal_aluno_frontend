@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { CourseCard } from "../../../components/card/CourseCard";
-import { StatCard } from "../../../components/card/StatCard";
-import Grid from "../../../components/layout/Grid";
+import { CourseCard } from "@/components/dashboard/CourseCard";
+import { StatCard } from "@/components/dashboard/StatCard";
+import Grid from "@/components/layout/Grid";
 
 function Dashboard() {
     const dataHoje = new Date()

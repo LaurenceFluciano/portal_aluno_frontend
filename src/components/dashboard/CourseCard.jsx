@@ -1,9 +1,6 @@
 import { Group } from "../layout/Group";
-import { Card } from "./Card";
-import { CardContent } from "./CardContent";
-import { CardHeader } from "./CardHeader";
-import CourseProgressBar from "../ProgressBar";
-
+import { Card } from "../card/Card";
+import CourseProgressBar from "./ProgressBar";
 
 export function CourseCard({
     subject="Front-end",
@@ -15,17 +12,17 @@ export function CourseCard({
     return (
         <Card direction="col">
             <Group>
-                <CardHeader direction="row">
+                <Card.Header direction="row">
                     <span className="card__badge">{status}</span>
                     <h3 className="card__title mt--4">
                         {subject}
                     </h3>
-                </CardHeader>
-                <CardContent direction="row">
+                </Card.Header>
+                <Card.Content direction="row">
                     <p className="card__description">{description}</p>
 
                     <CourseProgressBar progress={progress} />
-                </CardContent>
+                </Card.Content>
             </Group>
 
             <Group className="align--middle-center">

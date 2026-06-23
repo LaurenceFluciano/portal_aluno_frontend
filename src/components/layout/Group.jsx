@@ -1,3 +1,4 @@
+import './group.css'
 
 export function Group({children, layout = 'row', className=""}) {
 

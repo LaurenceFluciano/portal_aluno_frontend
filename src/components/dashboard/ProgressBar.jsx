@@ -1,4 +1,4 @@
-import { Group } from "./layout/Group";
+import { Group } from "../layout/Group";
 
 
 export default function ProgressBar({ progress }) {

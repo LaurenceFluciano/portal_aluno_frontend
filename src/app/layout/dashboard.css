@@ -1,29 +1,41 @@
-/**
-* Abstract Card
+
+.dashboard{
+    background-color: #ededed;
+    padding: 1rem 0px;
+    min-height: 100vh;
+}
+
+.dashboard__container{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+/*
+* WELCOME
 */
 
-.card {
-    display: flex;
-    justify-content: space-between;
-    padding: 32px;
-    margin: 30px 15px;
-    background-color: #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 4px;
+.welcome{
+    padding: 40px 0;
 }
 
-.card__header {
-    display: flex;
-    width: 100%;
+.welcome h2{ 
+    margin: 0;
+    font-size: 32px;
+    color: #0F5830;
 }
 
-.card__content {
-    display: flex;
-    width: 100%;
+.welcome p{
+    color: #999999;
 }
 
 /*
-* card
+* CARD
+*/
+
+
+/*
+* cards
 */
 
 

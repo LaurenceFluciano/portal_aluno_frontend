@@ -1,4 +1,4 @@
-import "../../styles/grid.css"
+import "./grid.css"
 
 export default function Grid({ children, cols, gap }) {
 
