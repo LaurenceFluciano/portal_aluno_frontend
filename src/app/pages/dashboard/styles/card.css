@@ -1,31 +1,6 @@
-/**
-* Abstract Card
-*/
-
-.card {
-    display: flex;
-    justify-content: space-between;
-    padding: 32px;
-    margin: 30px 15px;
-    background-color: #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 4px;
-}
-
-.card__header {
-    display: flex;
-    width: 100%;
-}
-
-.card__content {
-    display: flex;
-    width: 100%;
-}
-
 /*
-* card
+*
 */
-
 
 .card__badge {
     display: inline-block;

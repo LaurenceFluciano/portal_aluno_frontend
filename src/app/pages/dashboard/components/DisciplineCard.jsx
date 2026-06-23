@@ -1,8 +1,6 @@
-import { Group } from "../Group";
-import { Card } from "../Card/Card";
-import { CardContent } from "../Card/CardContent";
-import { CardHeader } from "../Card/CardHeader";
-import CourseProgressBar from "../ProgressBar";
+import { Group } from "../../../../components/layout/Group";
+import { Card } from "../../../../components/card/Card";
+import CourseProgressBar from "./ProgressBar";
 
 
 export function DisciplineCard({
@@ -13,8 +11,8 @@ export function DisciplineCard({
 }) {
 
     return (
-        <Card layout="row">
-            <CardHeader layout="col">
+        <Card direction="row">
+            <Card.Header direction="col">
                 <Group>
                     <h3 className="card__title">{subject}</h3>
                     <span className="card__description">{professor}</span>
@@ -22,11 +20,11 @@ export function DisciplineCard({
                 <Group className="ml--auto">
                     <span className="card__badge">{status}</span>
                 </Group>
-            </CardHeader>
-            <CardContent>
+            </Card.Header>
+            <Card.Content>
                 <CourseProgressBar progress={progress} />
                 <button className="card__button">Acessar Disciplina</button>
-            </CardContent>
+            </Card.Content>
         </Card>
     )
 }

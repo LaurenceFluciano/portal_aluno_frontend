@@ -1,0 +1,17 @@
+/*
+* WELCOME
+*/
+
+.welcome{
+    padding: 40px 0;
+}
+
+.welcome h2{ 
+    margin: 0;
+    font-size: 32px;
+    color: #0F5830;
+}
+
+.welcome p{
+    color: #999999;
+}

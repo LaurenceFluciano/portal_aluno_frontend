@@ -1,0 +1,17 @@
+{
+    "ok": true,
+    "response": [
+        {
+            "subject": "Front-end",
+            "status":"EM CURSO",
+            "professor": "PROF. MARCO SILVA",
+            "progress": 75
+        },
+        {
+           "subject": "UX Design",
+            "status": "PRÓXIMO SEMESTRE",
+            "professor": "DRA. ANA LUCIA",
+            "progress": 0
+        }
+    ]
+}

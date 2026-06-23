@@ -1,0 +1,30 @@
+/*
+* GROUP
+*/
+
+.group {
+    display: flex;
+}
+
+.group--row {
+    flex-direction: column;
+}
+
+.group--col {
+    flex-direction: row;
+}
+
+.group.align--middle-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.group--col.align--middle-start {
+    align-items: center;
+    justify-content: start;
+}
+
+.group--row.align--middle-start {
+    align-items: start;
+    justify-content: center;
+}

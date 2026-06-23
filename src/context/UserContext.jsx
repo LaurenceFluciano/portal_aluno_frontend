@@ -1,9 +1,8 @@
 import { createContext, useState } from 'react';
 
-export const UserContext = createContext();
+const UserContext = createContext();
 
-
-export function UserProvider({ children }) {
+function UserProvider({ children }) {
  
   const [user, setUser] = useState({
     name: '',
@@ -18,3 +17,5 @@ export function UserProvider({ children }) {
     </UserContext.Provider>
   );
 }
+
+export {UserContext, UserProvider}

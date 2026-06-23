@@ -1,4 +1,4 @@
-import { Card } from "../Card/Card";
+import { Card } from "../../../../components/card/Card";
 
 export function StatCard({
     label="Tempo de estudo",

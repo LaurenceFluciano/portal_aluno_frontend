@@ -1,18 +1,35 @@
 import { useEffect, useState } from "react";
-import { CourseCard } from "../../../components/CourseCard/CourseCard";
-import { StatCard } from "../../../components/StatCard/StatCard";
+import { CourseCard } from "@/components/dashboard/CourseCard";
+import { StatCard } from "@/components/dashboard/StatCard";
+import Grid from "@/components/layout/Grid";
+
+import './styles/card.css'
+import './styles/welcome.css'
 
 function Dashboard() {
-    const [dataHoje, setDataHoje] = useState(new Date())
+    const dataHoje = new Date()
 
+    const [cursos, setCursos] = useState([])
+    const [error, setError] = useState(null)
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setDataHoje(new Date())
-        }, 60000)
+        async function loadData() {
+            try {
+                const response = await fetch("../../../mock/courses.json");
 
-        return () => clearInterval(interval)
-    }, [])
+                if (!response.ok) {
+                    throw new Error("Dados não encontrados.")
+                }
+
+                const data = await response.json();
+                setCursos(data.response);
+            } catch (err)  {
+                setError(err);
+            }
+        }
+
+        loadData();
+    }, []);
 
     return (
         <div className="dashboard__container">
@@ -33,21 +50,27 @@ function Dashboard() {
                 </p>
             </div>
 
-            <CourseCard
-                subject="Front-end"
-                status="Em progresso"
-                description="Aula 2 - Conceitos de desenvolvimento Front-end e Git + Github"
-                progress={65}
-            />
+            { error && <div>Erro ao carregar os dados </div>}
+            { cursos.length > 0 && cursos.map((value, index) => (
+                <CourseCard 
+                    key={index}
 
-            <CourseCard
-                status="Em progresso"
-                subject="UX Design"
-                description="Aula 3 - Usabilidade"
-                progress={34}
-            />
+                    subject={value.subject}
+                    status={value.status}
+                    description={value.description}
+                    progress={value.progress}
+                />
+            ))}
+         
 
-            <div className="grid sd:col--2 md:col--3 gap--16">
+            <Grid 
+                cols={{
+                    default: 1,
+                    sm: 2,
+                    md: 3
+                }}
+                gap={"md"}
+            >
                 <StatCard 
                     label="Tempo de estudo"
                     value="12h 45m"
@@ -65,7 +88,7 @@ function Dashboard() {
                     value="8"
                     description="Tópicos ativos"
                 />
-            </div>
+            </Grid>
         </div>
     )
 }

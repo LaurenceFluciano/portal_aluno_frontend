@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import InputField from '../../../components/InputField';
-
-import '../../../styles/auth.css';
+import InputField from '@/components/ui/InputField';
+import '@/styles/auth.css';
 
 export function Login() {
+
+  // DICA!
+  // Crie um custom hook para abstrair toda essa lógica!
+  // https://react.dev/learn/reusing-logic-with-custom-hooks
+
+  // duvidas onde salva o hook?
+  // pode ser em src/hooks
 
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -33,9 +39,9 @@ export function Login() {
     }
 
     setErro(''); 
-    navigate('/dashboard');
-    
+    navigate('/dashboard'); 
   }
+
   return (
     <div className="container">
       <aside>
