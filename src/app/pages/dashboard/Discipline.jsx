@@ -3,6 +3,8 @@ import { DisciplineCard } from "./components/DisciplineCard";
 
 import './styles/card.css'
 
+import Grid from "@/components/layout/Grid"
+
 export default function Discipline() {
     const [disciplinas, setDisciplinas] = useState([])
     const [erro, setErro] = useState(null)
@@ -25,12 +27,20 @@ export default function Discipline() {
         }
 
         loadData();
-    })
+    }, [])
 
     return (
         <div className="dashboard__container">
-            <h2>Minhas Disciplinas</h2>
-            <div className="grid sd:col--2 md:col--3 gap--16">
+            <h2 className="ml--md">Minhas Disciplinas</h2>
+            <Grid
+                cols={{
+                    default: 1,
+                    md: 2,
+                }}
+                gap={{
+                    default: 'md'
+                }}
+            >
                 {erro && <div>Ocorreu um erro ao buscar os dados</div>}
                 {disciplinas.length > 0 && disciplinas.map((value, index) => (
                     <DisciplineCard 
@@ -41,7 +51,7 @@ export default function Discipline() {
                         progress={value.progress}
                     />
                 ))}
-            </div>
+            </Grid>
         </div>
     )
 }

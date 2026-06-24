@@ -75,11 +75,21 @@
     font-size: 12px;
 }
 
+/**
+* dicipline--card
+*/
+
+
+
+
 @media (min-width: 768px) {
 
     .card__button {
         width: auto;
     }
 
+    .card__content--course {
+        min-width: 400px;
+    }
 
 }

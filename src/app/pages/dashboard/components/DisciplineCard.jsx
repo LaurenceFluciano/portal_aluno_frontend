@@ -11,19 +11,19 @@ export function DisciplineCard({
 }) {
 
     return (
-        <Card direction="row">
-            <Card.Header direction="col">
-                <Group>
+        <Card layout={{default:'row'}} className="mx--lg my--lg card--discipline">
+            <Card.Header layout={{default:'row', md: 'col'}}>
+                <Group layout={{default:'row'}}>
                     <h3 className="card__title">{subject}</h3>
                     <span className="card__description">{professor}</span>
                 </Group>
-                <Group className="ml--auto">
+                <Group layout={{default:'row'}} className="md:ml--auto mb--sm">
                     <span className="card__badge">{status}</span>
                 </Group>
             </Card.Header>
-            <Card.Content>
-                <CourseProgressBar progress={progress} />
-                <button className="card__button">Acessar Disciplina</button>
+            <Card.Content layout={{default:'row'}}>
+                <CourseProgressBar progress={progress}  />
+                <button className="card__button mt--sm">Acessar Disciplina</button>
             </Card.Content>
         </Card>
     )

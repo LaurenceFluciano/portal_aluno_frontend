@@ -11,7 +11,7 @@ export default function DashboardLayout() {
                         Academia <span>Portal do aluno</span>
                     </Menu.Title>
 
-                    <Menu.Nav variant={'header'}>
+                    <Menu.Nav variant={'header'} className='ml--auto'>
                         <Menu.Item to={'/dashboard'}>Painel</Menu.Item>
                         <Menu.Item to={'/disciplina'}>Disciplinas</Menu.Item>
                         <Menu.Item to={'/tutoria'}>Tutor IA</Menu.Item>

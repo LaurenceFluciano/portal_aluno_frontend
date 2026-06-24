@@ -18,8 +18,8 @@ export function CourseCard({
                         {subject}
                     </h3>
                 </Card.Header>
-                <Card.Content layout={{ default: 'row' }}>
-                    <p className="card__description my--md">{description}</p>
+                <Card.Content layout={{ default: 'row' }} className="card__content--course">
+                    <p className="card__description my--md truncate">{description}</p>
 
                     <CourseProgressBar progress={progress} />
                 </Card.Content>

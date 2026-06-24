@@ -17,13 +17,13 @@ function MenuBody({ children }) {
     )
 }
 
-function MenuNav({ children, variant }) {
+function MenuNav({ children, variant, className }) {
 
     const baseClass = styles.menu__nav;
     const variantClass = variant ? styles[`menu__nav--${variant}`] : "";
 
     return (
-        <nav className={`${baseClass} ${variantClass}`.trim()}>
+        <nav className={`${baseClass} ${variantClass} ${className}`.trim()}>
             {children}
         </nav>
     )
