@@ -31,6 +31,8 @@ function App() {
               <Route element={<DashboardLayout/>}>
                 <Route path="/dashboard" element={<Dashboard/>} />
                 <Route path="/perfil/dados-pessoais" element={<Perfil />} />
+                <Route path="/perfil/configuracoes" element={<Perfil />} />
+                <Route path="/perfil/seguranca" element={<Perfil />} />
                 <Route path="/disciplina" element={<Discipline/>} />
                 <Route path="/tutoria" element={<Tutoria />} />
               </Route>

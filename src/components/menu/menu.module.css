@@ -59,6 +59,24 @@
     font-size: 12px;
 } 
 
+.menu__nav--lined {
+    display: flex;
+    gap: var(--lg);
+    padding: 32px 0;
+}
+
+.menu__nav--lined .menu__item {
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu__nav--lined .menu__item--active{
+    color: #0F5830;
+    padding-bottom: var(--md);
+    border-bottom: #0F5830 solid;
+}
+
 @media (min-width: 768px) {
 
     .menu__nav--header {
