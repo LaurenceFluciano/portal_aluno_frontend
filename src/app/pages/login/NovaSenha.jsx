@@ -2,6 +2,7 @@ import '@/styles/auth.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputField from "@/components/ui/InputField";
+import '../../../styles/mobile.css';
 
 function NovaSenha() {
   const [codigoDigitado, setCodigoDigitado] = useState('');

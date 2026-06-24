@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputField from "@/components/ui/InputField";
 import emailjs from '@emailjs/browser';
+import '../../../styles/mobile.css';
 
 function RecuperarSenha() {
   const [email, setEmail] = useState('');
@@ -40,7 +41,7 @@ function RecuperarSenha() {
       codigo: codigoGerado, 
     };
 
-    emailjs.send('service_rmmv29h', 'template_9i3r3xg', templateParams, 'K7om5hJg9s2Hnajqk')
+    emailjs.send('service_ke3g413', 'template_mo7aox1', templateParams, 'GE0MhHPHCBST94fHZ')
       .then(() => {
         setSucesso(true);
       

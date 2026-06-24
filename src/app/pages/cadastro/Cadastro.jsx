@@ -1,53 +1,85 @@
-import { createContext, useState, useContext } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useField } from "../../hooks/useField";
 import CadastroPassoUm from "./CadastroPassoUm";
 import CadastroPassoDois from "./CadastroPassoDois";
 
 import '../../../styles/auth.css';
-
- const CadastroContext = createContext();
+import '../../../styles/mobile.css';
 
 export function Cadastro() {
-    const [searchParams] = useSearchParams();
-    const passo = searchParams.get('passo') || '1';
+  const navigate = useNavigate();
+    const [passo, setPasso] = useState(1);
 
-    const [cadData, SetcadData] = useState({
-      cpf : '',
-      nome : '',
-      telefone : '',
-      email : '',
-      senha : '',
-    })
+    const { field, setField, errors, setErrors, loading, setLoading } = useField({
+        cpf: '', nome: '', telefone: '', email: '', senha: ''
+    });
 
-    const handleCadChange = (novoCampo) => {
-      SetcadData(prevData => ({
-        ...prevData,
-        ...novoCampo
-      }));
+   const irParaPassoDois = () => {
+        if (!field.cpf || field.cpf.length < 11) {
+            setErrors({ geral: 'Por favor, insira um CPF válido com 11 dígitos.' });
+            return;
+        }
+        setErrors({}); 
+        setPasso(2);   
     };
+    const finalizarCadastro = () => {
+        
+        if (!field.nome || !field.telefone || !field.email || !field.senha) {
+            setErrors({ geral: 'Por favor, preencha todos os campos obrigatórios.' });
+            return;
+        }
 
+        
+        if (!field.email.includes('@')) {
+            setErrors({ geral: 'Por favor, insira um e-mail válido.' });
+            return;
+        }
 
-    const handleEnvioCad = () => {
-        localStorage.setItem('cadastroData', JSON.stringify(cadData));
-    }
+       
+        if (field.senha.length < 6) {
+            setErrors({ geral: 'A sua senha deve ter pelo menos 6 caracteres.' });
+            return;
+        }
 
+      
+        setLoading(true);
 
+        setTimeout(() => {
+            localStorage.setItem('cadastroData', JSON.stringify(field));
+            setLoading(false);
+            alert("Cadastro efetuado com sucesso!");
+            navigate('/login');
+        }, 1000);
+    };
     return (
     
-    <CadastroContext.Provider value={{ cadData, handleCadChange, handleEnvioCad }}>
+    <div className="container">
+            <aside>
+                <p>Educação não é aprendizado de fatos... <span>Albert Einstein</span></p>
+            </aside>
 
-      <>
-       {passo === '1' && <CadastroPassoUm/>}
-       {passo === '2' && <CadastroPassoDois/>}
-       </>
-
-      </CadastroContext.Provider>
+            <main>
+                {passo === 1 ? (
+                    <CadastroPassoUm 
+                        field={field} 
+                        setField={setField} 
+                        errors={errors} 
+                        onNext={irParaPassoDois} 
+                    />
+                ) : (
+                    <CadastroPassoDois 
+                        field={field} 
+                        setField={setField} 
+                        errors={errors} 
+                        loading={loading}
+                        onBack={() => setPasso(1)} 
+                        onSubmit={finalizarCadastro} 
+                    />
+                )}
+            </main>
+        </div>
   );
-}
-
-export function UseCadastro() {
-    const context = useContext(CadastroContext);
-    return context;
 }
 
 

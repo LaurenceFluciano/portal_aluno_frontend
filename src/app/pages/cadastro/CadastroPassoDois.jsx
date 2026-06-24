@@ -1,62 +1,25 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import InputField from "@/components/ui/InputField";
-import { UseCadastro } from './Cadastro';
+import '../../../styles/mobile.css';
 
-function CadastroPassoDois() {
+function CadastroPassoDois({ field, setField, errors, loading, onBack, onSubmit }) {
 
-  const { cadData, handleCadChange, handleEnvioCad } = UseCadastro();
- 
-  const [erro, setErro] = useState('');
-
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!cadData.nome || !cadData.telefone || !cadData.email || !cadData.senha) {
-      setErro('Por favor, preencha todos os campos obrigatórios.');
-      return;
-    }
-
-    if (!cadData.email.includes('@')) {
-      setErro('Por favor, insira um e-mail válido.');
-      return;
-    }
-
-    if (cadData.senha.length < 6) {
-      setErro('A sua senha deve ter pelo menos 6 caracteres.');
-      return;
-    }
-
-
-    setErro('');
-
-    handleEnvioCad();
-
-    
-    navigate('/'); 
+    onSubmit();
 
   };
   return (
-    <div className="container">
-      <aside>
-        <p>
-          Educação não é aprendizado de fatos, mas o treinamento da mente para pensar.
-          <span>Albert Einstein</span>
-        </p>
-      </aside>
-      
-      <main>
+  
         <div className="cadastro">
           <h1>Cadastre-se</h1>
           <p>Passo 2 de 2. Por favor, insira os dados para finalizar.</p>
 
-          {erro && (
-            <p style={{ color: '#e50800', backgroundColor: '#fdf7f7', padding: '10px', borderRadius: '5px', fontWeight: 'bold' }}>
-              {erro}
-            </p>
-          )}
+          {errors.geral && (
+        <p style={{ color: '#e50800', backgroundColor: '#fdf7f7', padding: '10px', borderRadius: '5px', fontWeight: 'bold' }}>
+          {errors.geral}
+        </p>
+      )}
           
           <form onSubmit={handleSubmit}>
             
@@ -66,8 +29,8 @@ function CadastroPassoDois() {
               name="nome"
               type="text"
               placeholder="Digite seu nome completo"
-              value={cadData.nome}
-              onChange={(e) => handleCadChange({ nome: e.target.value })}
+              value={field.nome}
+              onChange={(e) => setField('nome', e.target.value)}
             />
 
             <InputField 
@@ -76,8 +39,8 @@ function CadastroPassoDois() {
               name="telefone"
               type="tel"
               placeholder="(99) 99999-9999"
-              value={cadData.telefone}
-              onChange={(e) => handleCadChange({ telefone: e.target.value })}
+              value={field.telefone}
+              onChange={(e) => setField('telefone', e.target.value)}
             />
 
             <InputField 
@@ -86,8 +49,8 @@ function CadastroPassoDois() {
               name="email"
               type="email"
               placeholder="user@email.com"
-              value={cadData.email}
-              onChange={(e) => handleCadChange({ email: e.target.value })}
+              value={field.email}
+              onChange={(e) => setField('email', e.target.value)}
             />
 
             <InputField 
@@ -96,15 +59,17 @@ function CadastroPassoDois() {
               name="senha"
               type="password"
               placeholder="Crie uma senha"
-              value={cadData.senha}
-              onChange={(e) => handleCadChange({ senha: e.target.value })}
+              value={field.senha}
+              onChange={(e) => setField('senha', e.target.value)}
             />
-
-            <button type="submit">Cadastrar</button>
+              <button type="button" onClick={onBack} style={{ backgroundColor: '#ccc', marginBottom: '10px', color: '#333' }}>
+                  Voltar
+              </button>
+            <button type="submit" disabled={loading}>
+                  {loading ? 'Cadastrando...' : 'Cadastrar'}
+            </button>
           </form>
         </div>
-      </main>
-    </div>
   );
 }
 

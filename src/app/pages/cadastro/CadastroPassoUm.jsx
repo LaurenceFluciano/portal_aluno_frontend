@@ -1,51 +1,27 @@
-import { useState } from 'react'; 
-import { useNavigate } from 'react-router-dom';
 import InputField from "@/components/ui/InputField";
-import { UseCadastro } from './Cadastro';
+import '../../../styles/mobile.css';
 
-function CadastroPassoUm() {
-  const { cadData, handleCadChange } = UseCadastro();
-  const [erro, setErro] = useState('');
-
-  const navigate = useNavigate();
+function CadastroPassoUm({ field, setField, errors, onNext }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    onNext();
+   };
 
-    if (!cadData.cpf) {
-      setErro('Por favor, preencha o seu CPF.');
-      return;
-    }
-
-    if (cadData.cpf.length < 11) {
-      setErro('Por favor, digite um CPF válido com pelo menos 11 números.');
-      return;
-    }
-
-    setErro('');
-    navigate('/cadastro?passo=2'); 
-  };
-
+    
 
   return (
-    <div className="container">
-      <aside>
-        <p>
-          Educação não é aprendizado de fatos, mas o treinamento da mente para pensar.
-          <span>Albert Einstein</span>
-        </p>
-      </aside>
-
-      <main>
+  
         <div className="cadastro">
           <h1>Cadastre-se</h1>
           <p>Passo 1 de 2. Por favor, insira seu cpf para prosseguir.</p>
 
-          {erro && (
-            <p style={{ color: '#e50800', backgroundColor: '#fdf7f7', padding: '10px', borderRadius: '5px', fontWeight: 'bold' }}>
-              {erro}
-            </p>
-          )}
+          
+      {errors.geral && (
+        <p style={{ color: '#e50800', backgroundColor: '#fdf7f7', padding: '10px', borderRadius: '5px', fontWeight: 'bold' }}>
+          {errors.geral}
+        </p>
+      )}
 
           <form onSubmit={handleSubmit}>
             <InputField 
@@ -54,15 +30,14 @@ function CadastroPassoUm() {
               name="cpf"
               type="text"
               placeholder="000.000.000-00"
-              value={cadData.cpf}
-              onChange={(e) => handleCadChange({ cpf: e.target.value })}
+              value={field.cpf}
+              onChange={(e) => setField( 'cpf', e.target.value )}
             />
 
             <button type="submit">Prosseguir</button>
           </form>
         </div>
-      </main>
-    </div>
+
   );
 }
 
