@@ -1,34 +1,46 @@
+import { Group } from '@/components/layout/Group'
+
 function MessageRoot({ children }) {
     return (
-        <div className="message">
+        <Group className="message__header" layout={{default: 'row'}}>
             { children }
-        </div>
+        </Group>
     )
 }
 
 
 function MessageHeader({ children }) {
     return (
-        <div className="message__header">
+        <Group className="message__header" layout={{default: 'col'}}>
             { children }
-        </div>
+        </Group>
     )
 }
 
-function MessageContent({ children }) {
+function MessageContent({ children, className }) {
 
 
     return (
-        <div className="message__content">
+        <div className={`message__content ${className}`}>
             { children }
         </div>
     )
 }
 
+function MessageSkeleton({isActive}) {
+    return (
+        <div className={`${isActive ? 'message__skeleton' : ''}`}>
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+        </div>
+    )
+}
 
 const Message = Object.assign(MessageRoot, {
     Header: MessageHeader,
-    Content:  MessageContent
+    Content:  MessageContent,
+    Skeleton: MessageSkeleton
 });
 
 export default Message;
