@@ -1,28 +1,49 @@
+import { ArrowUp } from "lucide-react";
+import { Group } from "@/components/layout/Group"
+import { useRef } from "react";
+
 function PromptRoot({ children }) {
     return (
-        <div className="prompt">
-            { children }
-        </div>
+        <Group layout={{default: 'col'}} className="prompt align--middle-start mx--auto">
+            {children}
+        </Group>
     )
 }
+
 
 function PromptInput({ value, onChange }) {
+    const textareaRef = useRef(null);
+
+    const handleInput = (e) => {
+        const textarea = textareaRef.current;
+        if (textarea) {
+            textarea.style.height = "auto";
+            textarea.style.height = `${textarea.scrollHeight}px`;
+        }
+        
+        if (onChange) onChange(e);
+    };
+
     return (
         <textarea
+            ref={textareaRef}
             value={value}
-            onChange={onChange}
-            className="prompt__input" 
+            onChange={handleInput}
+            className="prompt__input"
+            placeholder="Pergunte ao Tutor IA..."
+            rows={1}
         />
-    )
+    );
 }
 
-function PromptSubmitButton({ children, onSubmit }) {
+function PromptSubmitButton({ onSubmit, isDisabled=true }) {
     return (
         <button 
-            className="prompt__submit-button"
+            className={`prompt__submit-button ${isDisabled ? 'prompt__submit-button--disabled' : ''} ml--auto`}
             onClick={onSubmit}
+            disabled={isDisabled}
         >
-            { children }
+            <ArrowUp size={18} />
         </button>
     )
 }

@@ -12,7 +12,6 @@ export default function Tutoria() {
     const firstName = user.nome.split(' ')[0];
 
     return (
-        <div className="dashboard__container">
             <Chat>
                 <Chat.Body>
                     <Chat.MessageList>
@@ -47,6 +46,5 @@ export default function Tutoria() {
                     </Prompt>
                 </Chat.Footer>
             </Chat>
-        </div>
     )
 }
