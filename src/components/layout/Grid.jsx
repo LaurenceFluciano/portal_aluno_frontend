@@ -8,7 +8,10 @@ export default function Grid({ children, cols, gap }) {
         cols.sm ? `sm:col--${cols.sm}` : '',
         cols.md ? `md:col--${cols.md}` : '',
         cols.lg ? `lg:col--${cols.lg}` : '',
-        `gap--${gap}`
+        `gap--${gap.default}`,
+        gap.sm ? `sm:gap--${gap.sm}` : '',
+        gap.md ? `md:gap--${gap.md}` : '',
+        gap.lg ? `lg:gap--${gap.lg}` : '',
     ].filter(Boolean).join(' ');
 
 

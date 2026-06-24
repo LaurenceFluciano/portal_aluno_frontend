@@ -9,9 +9,8 @@
 .menu__body{
     display: flex;
     align-items: center;
-    width: 960px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 28px 32px;
 }
 
 .menu__title{
@@ -26,17 +25,10 @@
     color: #CCCCCC;
 }
 
-.menu__nav{
-    margin-left: auto;
+.menu__nav--header .menu__item {
+    display: none;
 }
 
-.menu__item{
-    display: inline-block;
-    padding: 0 8px;
-    color: #999999;
-    text-decoration: none;
-    font-weight: bold;
-}
 
 .menu__item:hover{
     text-decoration: underline;
@@ -46,7 +38,59 @@
     color: #0F5830;
 }
 
-.menu__nav--header {
+.menu__item  {
+    color: #636363;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.menu__item--active svg {
+    color: #0F5830;
+}
+
+.menu__nav--bottom-bar .menu__item span {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.menu__nav--bottom-bar .menu__item--active span {
+    color: #0F5830;
+    font-weight: 600;
+    font-size: 12px;
+} 
+
+.menu__nav--lined {
     display: flex;
-    gap: var(--md);
+    gap: var(--lg);
+    padding: 32px 0;
+}
+
+.menu__nav--lined .menu__item {
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu__nav--lined .menu__item--active{
+    color: #0F5830;
+    padding-bottom: var(--md);
+    border-bottom: #0F5830 solid;
+}
+
+@media (min-width: 768px) {
+
+    .menu__nav--header {
+        display: flex;
+        gap: var(--md);
+    }
+    
+    .menu__nav--header .menu__item {
+        display: inline-block;
+        font-weight: bold;
+        padding: 0 8px;
+    }
+
+    .menu__nav--header .menu__item--active{
+        color: #0F5830;
+    }
 }

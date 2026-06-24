@@ -17,14 +17,14 @@
 }
 
 .card__description{
-    margin: 0;
     color: #999999;
 }
 
 .card__progress-bar {
-    width: 25rem;
+    width: 100%;
+    max-width: 400px;
+    height: 8px;
     margin: 10px 0;
-    height: 10px;
     background-color: #CCCCCC;
     border-radius: 8px;
 }
@@ -41,6 +41,8 @@
 }
 
 .card__button {
+    width: 100%;
+    max-width: 450px;
     height: fit-content;
     display: block;
     padding: 16px;
@@ -56,20 +58,35 @@
 */
 
 .card__label{
-    margin: 0;
-    padding: 0;
     background-color: transparent;
-    color: #999999;
+    color: #636363;
     font-weight: 600;
     
 }
 
 .card__value {
-    margin: 8px 0;
     padding-top: 0;
     color: #0F5830;
 }
 
 .card__description--stat{
     font-size: 12px;
+}
+
+.card__icon {
+    color: #636363;
+}
+
+
+
+@media (min-width: 768px) {
+
+    .card__button {
+        width: auto;
+    }
+
+    .card__content--course {
+        min-width: 400px;
+    }
+
 }
