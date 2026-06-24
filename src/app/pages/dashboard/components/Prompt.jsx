@@ -36,10 +36,10 @@ function PromptInput({ value, onChange }) {
     );
 }
 
-function PromptSubmitButton({ onSubmit, isDisabled=true }) {
+function PromptSubmitButton({ onSubmit, isDisabled }) {
     return (
         <button 
-            className={`prompt__submit-button ${isDisabled ? 'prompt__submit-button--disabled' : ''} ml--auto`}
+            className={`prompt__submit-button ml--auto ${isDisabled ? 'prompt__submit-button--disabled' : ''}`}
             onClick={onSubmit}
             disabled={isDisabled}
         >
