@@ -7,7 +7,7 @@ import '../../../styles/auth.css';
 
  const CadastroContext = createContext();
 
-export function Cadastro() {
+export default function Cadastro() {
     const [searchParams] = useSearchParams();
     const passo = searchParams.get('passo') || '1';
 
@@ -49,6 +49,3 @@ export function UseCadastro() {
     const context = useContext(CadastroContext);
     return context;
 }
-
-
-export default Cadastro;

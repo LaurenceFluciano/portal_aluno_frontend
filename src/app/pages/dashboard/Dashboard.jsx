@@ -3,10 +3,13 @@ import { CourseCard } from "./components/CourseCard";
 import { StatCard } from "./components/StatCard";
 import Grid from "@/components/layout/Grid";
 
+import useUser from "@/hook/useUser"
+
 import './styles/card.css'
 import './styles/welcome.css'
 
 function Dashboard() {
+    const { user } = useUser()
     const dataHoje = new Date()
 
     const [cursos, setCursos] = useState([])
@@ -31,12 +34,14 @@ function Dashboard() {
         loadData();
     }, []);
 
+    const firstName = user.nome.split(' ')[0];
+
     return (
         <div className="dashboard__container">
 
             <div className="welcome">
                 <h2>
-                    Boa noite, João
+                    Boa noite, {firstName}
                 </h2>
                 <p className="ml--4 mb--4">
                     {String(dataHoje.getDate()).padStart(2,'0')}/
