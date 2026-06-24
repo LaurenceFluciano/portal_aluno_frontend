@@ -28,3 +28,77 @@
     align-items: start;
     justify-content: center;
 }
+
+
+
+@media (min-width: 576px) {
+    .sm\:group--row {
+        flex-direction: column;
+    }
+
+    .sm\:group--col {
+        flex-direction: row;
+    }
+
+
+    .sm\:group.align--middle-center {
+        align-items: center;
+        justify-content: center;
+    }
+    .sm\:group--col.align--middle-start {
+        align-items: center;
+        justify-content: start;
+    }
+    .sm\:group--row.align--middle-start {
+        align-items: start;
+        justify-content: center;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .md\:group--row {
+        flex-direction: column;
+    }
+
+    .md\:group--col {
+        flex-direction: row;
+    }
+
+    .md\:group.align--middle-center {
+        align-items: center;
+        justify-content: center;
+    }
+    .md\:group--col.align--middle-start {
+        align-items: center;
+        justify-content: start;
+    }
+    .md\:group--row.align--middle-start {
+        align-items: start;
+        justify-content: center;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .lg\:group--row {
+        flex-direction: column;
+    }
+
+    .lg\:group--col {
+        flex-direction: row;
+    }
+
+    .lg\:group.align--middle-center {
+        align-items: center;
+        justify-content: center;
+    }
+    .lg\:group--col.align--middle-start {
+        align-items: center;
+        justify-content: start;
+    }
+    .lg\:group--row.align--middle-start {
+        align-items: start;
+        justify-content: center;
+    }
+}

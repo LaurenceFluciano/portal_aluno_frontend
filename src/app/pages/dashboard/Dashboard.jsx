@@ -74,7 +74,11 @@ function Dashboard() {
                     sm: 2,
                     md: 3
                 }}
-                gap={"md"}
+                
+                gap={{
+                    default: 'md',
+                    md: 'lg'
+                }}
             >
                 <StatCard 
                     label="Tempo de estudo"

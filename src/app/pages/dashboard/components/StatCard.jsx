@@ -1,4 +1,4 @@
-import { Card } from "../../../../components/card/Card";
+import { Card } from "@/components/card/Card";
 
 export function StatCard({
     label="Tempo de estudo",
@@ -7,12 +7,12 @@ export function StatCard({
 }) {
 
     return (
-        <Card>
-            <span className="card__label">{label}</span>
-            <h3 id="tempo" className="card__value">
+        <Card layout={{default: 'row'}} className="mx--lg">
+            <span className="card__label m--none">{label}</span>
+            <h3 id="tempo" className="card__value my--md">
                 {value}
             </h3>
-            <p className="card__description card__description--stat">{description}</p>
+            <p className="card__description card__description--stat m--none">{description}</p>
         </Card>
     )
 }

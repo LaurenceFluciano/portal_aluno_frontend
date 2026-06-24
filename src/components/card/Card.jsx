@@ -1,34 +1,47 @@
 import styles from './card.module.css'
+import { Group } from '@/components/layout/Group'
 
-function CardRoot({children, direction = 'row'}) {
+function CardRoot({
+    children, 
+    layout = {default: 'row', sm: '', md:'', lg:''}, 
+    className=""
+}) {
     const baseClass = styles.card
 
     return (
-        <div className={`${baseClass} group group--${direction}`}>
+        <Group className={`${baseClass} ${className}`} layout={layout}>
             {children}
-        </div>
+        </Group>
     )
 }
 
-function CardHeader({children, direction="row"}) {
+function CardHeader({
+    children, 
+    layout = {default: 'row', sm: '', md:'', lg:''}, 
+    className=""
+}) {
 
     const baseClass = styles.card__header
 
     return (
-        <div className={`${baseClass} group group--${direction}`}>
+        <Group className={`${baseClass} ${className}`} layout={layout}>
             {children}
-        </div>
+        </Group>
     )
 }
 
-function CardContent({children, direction = "row"}) {
+function CardContent({
+    children, 
+    layout = {default: 'row', sm: '', md:'', lg:''}, 
+    className=""
+}) {
 
     const baseClass = styles.card__content
 
-    return (
-        <div className={`${baseClass} group group--${direction}`}>
+   return (
+        <Group className={`${baseClass} ${className}`} layout={layout}>
             {children}
-        </div>
+        </Group>
     )
 }
 

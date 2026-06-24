@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Datatype:wght@100..900&display=swap');
 
-*{
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 body{
@@ -193,3 +194,35 @@ header{
 .pr--md { padding-right: var(--md); }
 .pr--lg { padding-right: var(--lg); }
 .pr--xl { padding-right: var(--xl); }
+
+/* GAP MEDIAS */
+
+
+@media (min-width: 576px) {
+    .sm\:gap--none { gap: 0;    }
+    .sm\:gap--xs   { gap: var(--xs);  }
+    .sm\:gap--sm   { gap: var(--sm);  }
+    .sm\:gap--md   { gap: var(--md); }
+    .sm\:gap--lg   { gap: var(--lg); }
+    .sm\:gap--xl   { gap: var(--xl); }
+}
+
+
+@media (min-width: 768px) {
+    .md\:gap--none { gap: 0;    }
+    .md\:gap--xs   { gap: var(--xs);  }
+    .md\:gap--sm   { gap: var(--sm);  }
+    .md\:gap--md   { gap: var(--md); }
+    .md\:gap--lg   { gap: var(--lg); }
+    .md\:gap--xl   { gap: var(--xl); }
+}
+
+
+@media (min-width: 992px) {
+    .lg\:gap--none { gap: 0;    }
+    .lg\:gap--xs   { gap: var(--xs);  }
+    .lg\:gap--sm   { gap: var(--sm);  }
+    .lg\:gap--md   { gap: var(--md); }
+    .lg\:gap--lg   { gap: var(--lg); }
+    .lg\:gap--xl   { gap: var(--xl); }
+}
