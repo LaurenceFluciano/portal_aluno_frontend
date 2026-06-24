@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputField from "@/components/ui/InputField";
-import emailjs from '@emailjs/browser';
 import '../../../styles/mobile.css';
+import { sendVerificationCodeEmail } from '../../services/email.service';
 
 function RecuperarSenha() {
   const [email, setEmail] = useState('');
@@ -28,30 +28,22 @@ function RecuperarSenha() {
    
     setErro('');
     
-    alert("Um link de recuperação foi enviado para o seu e-mail!");
-
-    const codigoGerado = Math.floor(100000 + Math.random() * 900000).toString();
-
-    localStorage.setItem('codigoRecuperacao', codigoGerado);
+   
     localStorage.setItem('emailRecuperacao', email); 
+    
+    try {
+      sendVerificationCodeEmail(email)
 
+      setSucesso(true);
+              
+      setTimeout(() => {
+        navigate('/nova-senha'); 
+      }, 5000);
 
-    const templateParams = {
-      user_email: email,
-      codigo: codigoGerado, 
-    };
+    } catch {
+      setErro('Erro ao enviar o e-mail.');
+    }
 
-    emailjs.send('service_ke3g413', 'template_mo7aox1', templateParams, 'GE0MhHPHCBST94fHZ')
-      .then(() => {
-        setSucesso(true);
-      
-        setTimeout(() => {
-          navigate('/nova-senha'); 
-        }, 1000);
-      })
-      .catch((err) => {
-        setErro('Erro ao enviar o e-mail.');
-      });
   };
  
   return (
@@ -71,6 +63,13 @@ function RecuperarSenha() {
           {erro && (
             <p style={{ color: '#e50800', backgroundColor: '#fdf7f7', padding: '10px', borderRadius: '5px', fontWeight: 'bold' }}>
               {erro}
+            </p>
+          )}
+
+
+          {sucesso && (
+            <p style={{ color: '#00a500', backgroundColor: '#fdf7f7', padding: '10px', borderRadius: '5px', fontWeight: 'bold' }}>
+              Código de verificação enviado para o email com sucesso!
             </p>
           )}
 
