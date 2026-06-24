@@ -83,9 +83,9 @@ export default function Tutoria() {
             <Chat>
                 <Chat.Body>
                     <Chat.MessageList>
-                        {messages.map(message => {
+                        {messages.map((message, index) => {
                             return (
-                                <Message>
+                                <Message key={index}>
                                     <Message.Header>
                                         <Avatar username={message.username} />
                                         <span className="ml--sm">{message.role === 'user' ? firstName : message.username}</span>
