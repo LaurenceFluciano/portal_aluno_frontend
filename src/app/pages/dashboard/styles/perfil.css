@@ -1,0 +1,96 @@
+.dashboard__container {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.perfil__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #1a4d2e; 
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.perfil__name {
+  font-size: 28px;
+  margin: 0;
+  color: #333;
+}
+
+.perfil__course {
+  font-size: 16px;
+  color: #666;
+}
+
+.panel {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 24px; 
+}
+
+.panel__label {
+  font-size: 14px;
+  color: #888;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.panel__data {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+  display: block;
+  margin-top: 4px;
+}
+
+
+@media (max-width: 768px) {
+  .dashboard__container {
+    padding: 20px;
+    gap: 24px;
+  }
+
+  .perfil__avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+  }
+
+  .perfil__name {
+    font-size: 24px;
+  }
+
+  .panel {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .panel__data {
+    font-size: 16px;
+  }
+}
