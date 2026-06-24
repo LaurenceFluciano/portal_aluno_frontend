@@ -45,6 +45,11 @@ header{
     background-color: #ffffff;
 }
 
+footer {
+    min-height: 20vh;
+    background-color: #ededed;
+}
+
 /*
 * bottom-bar
 */

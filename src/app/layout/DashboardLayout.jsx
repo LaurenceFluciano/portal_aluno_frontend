@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Menu } from "@/components/menu/Menu";
 import { BottomBar } from "../../components/ui/BottomBar";
-import { BookOpen, LayoutDashboard, MessageSquare, User } from "lucide-react";
+import { BookOpen, BotIcon, LayoutDashboard, User } from "lucide-react";
 import { Group } from "../../components/layout/Group";
 
 export default function DashboardLayout() {
@@ -15,10 +15,30 @@ export default function DashboardLayout() {
                     </Menu.Title>
 
                     <Menu.Nav variant={'header'} className='ml--auto'>
-                        <Menu.Item to={'/dashboard'}>Painel</Menu.Item>
-                        <Menu.Item to={'/disciplina'}>Disciplinas</Menu.Item>
-                        <Menu.Item to={'/tutoria'}>Tutor IA</Menu.Item>
-                        <Menu.Item to={'/perfil/dados-pessoais'}>Perfil</Menu.Item>
+                        <Menu.Item to={'/dashboard'}>
+                            <Group layout={{default: 'col'}}>
+                                <LayoutDashboard size={20} />
+                                <span className="ml--sm" >Dashboard</span>
+                            </Group>
+                        </Menu.Item>
+                        <Menu.Item to={'/disciplina'}>
+                            <Group layout={{default: 'col'}}>
+                                <BookOpen size={20} />
+                                <span className="ml--sm" >Disciplinas</span>
+                            </Group>
+                        </Menu.Item>
+                        <Menu.Item to={'/tutoria'}>
+                            <Group layout={{default: 'col'}}>
+                                <BotIcon size={20} />
+                                <span className="ml--sm" >Tutor IA</span>
+                            </Group>
+                        </Menu.Item>
+                        <Menu.Item to={'/perfil/dados-pessoais'}>
+                            <Group layout={{default: 'col'}}>
+                                <User size={20} />
+                                <span className="ml--sm" >Perfil</span>
+                            </Group>
+                        </Menu.Item>
                     </Menu.Nav>
                 </Menu.Body>
             </Menu>
@@ -42,8 +62,8 @@ export default function DashboardLayout() {
                 </Menu.Item>
                 <Menu.Item to={'/tutoria'}>
                     <Group layout={{default: 'row'}} className="align--middle-center">
-                        <MessageSquare size={20} />
-                        <span>Tutoria</span>
+                        <BotIcon size={20} />
+                        <span>Tutor IA</span>
                     </Group>
                 </Menu.Item>
                 <Menu.Item to={'/perfil/dados-pessoais'}>

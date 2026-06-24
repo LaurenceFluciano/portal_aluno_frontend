@@ -7,6 +7,7 @@ import useUser from "@/hook/useUser"
 
 import './styles/card.css'
 import './styles/welcome.css'
+import { BotIcon, FileIcon, Timer } from "lucide-react";
 
 function Dashboard() {
     const { user } = useUser()
@@ -84,18 +85,21 @@ function Dashboard() {
                     label="Tempo de estudo"
                     value="12h 45m"
                     description="Esta semana"
+                    icon={Timer}
                 />
 
                 <StatCard 
                     label="Tarefas pendentes"
                     value="2"
                     description="Próximo vencimento em 2 dias"
+                    icon={FileIcon}
                 />
 
                 <StatCard 
                     label="Discussão com a IA"
                     value="8"
                     description="Tópicos ativos"
+                    icon={BotIcon}
                 />
             </Grid>
         </div>

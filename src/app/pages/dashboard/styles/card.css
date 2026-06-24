@@ -58,10 +58,8 @@
 */
 
 .card__label{
-    margin: 0;
-    padding: 0;
     background-color: transparent;
-    color: #999999;
+    color: #636363;
     font-weight: 600;
     
 }
@@ -75,10 +73,9 @@
     font-size: 12px;
 }
 
-/**
-* dicipline--card
-*/
-
+.card__icon {
+    color: #636363;
+}
 
 
 
