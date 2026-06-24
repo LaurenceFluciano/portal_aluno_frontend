@@ -29,7 +29,7 @@ function MenuNav({ children, variant, className }) {
     )
 }
 
-function MenuItem({ children, to }) {
+function MenuItem({ children, to, className }) {
     return (
         <NavLink 
             to={to}
@@ -37,9 +37,9 @@ function MenuItem({ children, to }) {
                 const baseClass = styles.menu__item;
                 const activeClass = isActive ? styles["menu__item--active"] : "";
                 
-                return `${baseClass} ${activeClass}`.trim();
+                return `${baseClass} ${activeClass} ${className}`.trim();
             }}
-        >
+        > 
             {children}
         </NavLink>
     )

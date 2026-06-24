@@ -1,5 +1,5 @@
-import { Group } from "../../../../components/layout/Group";
-import { Card } from "../../../../components/card/Card";
+import { Group } from "@/components/layout/Group";
+import { Card } from "@/components/card/Card";
 import CourseProgressBar from "./ProgressBar";
 
 

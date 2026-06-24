@@ -29,9 +29,6 @@
     display: none;
 }
 
-.menu__nav{
-    
-}
 
 .menu__item:hover{
     text-decoration: underline;
@@ -41,7 +38,26 @@
     color: #0F5830;
 }
 
+.menu__item  {
+    color: #636363;
+    font-weight: 800;
+    text-decoration: none;
+}
 
+.menu__item--active svg {
+    color: #0F5830;
+}
+
+.menu__nav--bottom-bar .menu__item span {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.menu__nav--bottom-bar .menu__item--active span {
+    color: #0F5830;
+    font-weight: 600;
+    font-size: 12px;
+} 
 
 @media (min-width: 768px) {
 
@@ -52,10 +68,8 @@
     
     .menu__nav--header .menu__item {
         display: inline-block;
-        padding: 0 8px;
-        color: #999999;
-        text-decoration: none;
         font-weight: bold;
+        padding: 0 8px;
     }
 
     .menu__nav--header .menu__item--active{
