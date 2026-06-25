@@ -1,10 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Datatype:wght@100..900&display=swap');
 
+/*
+* VARIAVEIS
+*/
+
+:root {
+    --xs: 4px;
+    --sm: 8px;
+    --md: 16px;
+    --lg: 24px;
+    --xl: 32px;
+
+
+    --primary-brand-color: #339647;
+    --secondary-brand-color: #0f5830;
+    --dark-brand-color: #0d2e1c;
+
+    --light-surface-color: #ffffff;
+    --surface-color: #f6f6f8;
+    --strong-surface-color: #ededed;
+
+
+    --strong-neutral-color: #1e293b;
+    --neutral-color: #475569;
+    --light-neutral-color: #959faf;
+    --ultra-light-neutral-color: #999;
+
+
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--strong-neutral-color);
 }
 
 .truncate {
@@ -42,12 +75,12 @@ main{
 }
 
 header{
-    background-color: #ffffff;
+    background-color: var(--light-surface-color);
 }
 
 footer {
     min-height: 20vh;
-    background-color: #ededed;
+    background-color: var(--secondary-surface-color);
 }
 
 /*
@@ -62,9 +95,9 @@ footer {
     padding: 18px;
     width: 25px;
     height: 25px;
-    color: #fff;
+    color: var(--light-surface-color);
     font-weight: bold;
-    background-color: #0F5830;
+    background-color: var(--secondary-brand-color);
 }
 
 /*
@@ -77,8 +110,8 @@ footer {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: #ffffff;
-    border-top: 1px solid #e0e0e0;
+    background-color: var(--light-surface-color);
+    border-top: 1px solid var(--strong-surface-color);
     width: 100%;
 }
 
@@ -102,7 +135,7 @@ footer {
 */
 
 .dashboard{
-    background-color: #ededed;
+    background-color: var(--strong-surface-color);
     padding: 1rem 0px;
     min-height: 100vh;
 }
@@ -122,7 +155,7 @@ footer {
     gap: 6px;
     padding: var(--sm) var(--md);
     margin-top: 16px;
-    background-color: #0f58301a;
+    background-color: var(--secondary-brand-color)1a;
 
     border-radius: var(--md);
     width: max-content;
@@ -132,7 +165,7 @@ footer {
 .message__skeleton .dot {
     width: 6px;
     height: 6px;
-    background-color: #0F5830;
+    background-color: var(--secondary-brand-color);
     border-radius: 50%;
     display: inline-block;
     
@@ -170,7 +203,7 @@ footer {
     max-width: 920px;
     background-color: #ef4444;
     border: 1px solid #f87171;
-    color: #ffffff;
+    color: var(--light-surface-color);
     
     position: fixed; 
     bottom: 160px;
@@ -222,18 +255,6 @@ footer {
         bottom: 24px;
     }
 
-}
-
-/*
-* VARIAVEIS
-*/
-
-:root {
-    --xs: 4px;
-    --sm: 8px;
-    --md: 16px;
-    --lg: 24px;
-    --xl: 32px;
 }
 
 

@@ -18,7 +18,7 @@ export function DisciplineCard({
                     <span className="card__description">{professor}</span>
                 </Group>
                 <Group layout={{default:'row'}} className="md:ml--auto mb--sm">
-                    <span className="card__badge">{status}</span>
+                    <span className={`card__badge ${status == "PRÓXIMO SEMESTRE" ? 'card__badge--next' : ''}`}>{status}</span>
                 </Group>
             </Card.Header>
             <Card.Content layout={{default:'row'}}>

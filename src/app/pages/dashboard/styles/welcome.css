@@ -9,7 +9,7 @@
 .welcome h2{ 
     margin: 0;
     font-size: 32px;
-    color: #0F5830;
+    color: var(--secondary-brand-color);
 }
 
 .welcome p{

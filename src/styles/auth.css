@@ -42,7 +42,7 @@
 }
 
 .cadastro input:focus{
-    outline-color: #0f5830;
+    outline-color: var(--secondary-brand-color);
 }
 
 .cadastro button{
@@ -50,25 +50,25 @@
     width: 100%;
     margin: 24px 0 18px 0;
     padding: 4px;
-    background-color: #0f5830;
+    background-color: var(--secondary-brand-color);
     border-width: none;
     border-style: solid;
     border-color: transparent;
-    color: #ffffff;
+    color: var(--light-surface-color);
     text-align: center;
 }
 
 .cadastro button:hover{
-    background-color: #0d2e1c;
+    background-color: var(--dark-brand-color);
 }
 
 .cadastro a{
-    color: #0f5830;
+    color: var(--secondary-brand-color);
     text-decoration: none;
 }
 
 .cadastro a:hover{
-    color: #0d2e1c;
+    color: var(--dark-brand-color);
     text-decoration: underline;
 }
 
@@ -86,8 +86,8 @@ aside{
     align-items: center;
     justify-content:center;
     width: 50%;
-    background-color: #0f5830;
-    color: #ffffff;
+    background-color: var(--secondary-brand-color);
+    color: var(--light-surface-color);
 }
 
 aside > p{
